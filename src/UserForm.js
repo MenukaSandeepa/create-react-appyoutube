@@ -1,6 +1,12 @@
 import { Button, Grid, Input, Typography } from "@mui/material";
+import { useState } from "react";
 
 const UserForm = props => {
+    //api users kiyana variable ekata api change ekak karoth api hadapu Users component eka nawatha relord refesh wen na
+    //e nisa api state variable ekak hadagn ona..ape ID ektai Name ektai
+    const[id, setId] = useState(0);
+    const[name,setName] = useState(''); // api dan id ektai name ektai onama ekak enna puluwn vidihta array 2k hadan tynne.. 0,'' defolt value dala
+
     return (
         <Grid
             container
@@ -35,8 +41,8 @@ const UserForm = props => {
                     id="id"
                     name="id"
                     sx={{width: '400px'}}
-                    value={''}
-                    onChange={e =>{}}
+                    value={id}
+                    onChange={e => setId(e.target.value)}
                 />
 
             </Grid>
@@ -60,8 +66,8 @@ const UserForm = props => {
                     id="name"
                     name="name"
                     sx={{width: '400px'}}
-                    value={''}
-                    onChange={e =>{}}
+                    value={name}
+                    onChange={e => setName(e.target.value)}
                 />
 
             </Grid>
